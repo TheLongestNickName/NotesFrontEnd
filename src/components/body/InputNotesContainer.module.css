@@ -1,0 +1,11 @@
+.wrap {
+  text-align: center;
+  margin-top: 75px;
+}
+.wrap p {
+  font-size: 24px;
+}
+
+.wrap input {
+  margin-right: 5px;
+}
