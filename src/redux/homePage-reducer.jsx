@@ -1,10 +1,12 @@
 const SET_DATA_NOTES = "SET-DATA-NOTES";
 const SET_INPUT_VALUE = "SET_INPUT_VALUE";
 const SET_DATA_NOTE = "SET_DATA_NOTE";
+const TOGGEL_IS_FETCHING = "TOGGEL_IS_FETCHING";
 
 const initialState = {
   notes: [],
   oneNotes: "",
+  isFetching: "en",
 };
 
 const homePageReducer = (state = initialState, action) => {
@@ -23,6 +25,11 @@ const homePageReducer = (state = initialState, action) => {
       return {
         ...state,
         oneNotes: action.data,
+      };
+    case TOGGEL_IS_FETCHING:
+      return {
+        ...state,
+        TOGGEL_IS_FETCHING: action.isFetching,
       };
 
     default:
@@ -47,5 +54,11 @@ export const setDataName = (data) => {
   return {
     type: SET_DATA_NOTE,
     data,
+  };
+};
+export const toggleIsFetching = (isFetching) => {
+  return {
+    type: TOGGEL_IS_FETCHING,
+    isFetching,
   };
 };
