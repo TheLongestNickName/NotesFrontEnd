@@ -27,8 +27,16 @@ class TableNotesContainer extends React.Component {
       <div className={s.wrap}>
         <table>
           <tr>
-            <th>Your notes</th>
-            <th>Action</th>
+            <th>
+              {this.props.isFetching == "en"
+                ? this.props.en.tableName.notes
+                : this.props.ru.tableName.notes}
+            </th>
+            <th>
+              {this.props.isFetching == "en"
+                ? this.props.en.tableName.actions
+                : this.props.ru.tableName.actions}
+            </th>
           </tr>
           {this.props.notes.map((n) => {
             return (
@@ -48,7 +56,12 @@ class TableNotesContainer extends React.Component {
 }
 
 let mapStateToProps = (state) => {
-  return { notes: state.homePage.notes };
+  return {
+    notes: state.homePage.notes,
+    isFetching: state.homePage.isFetching,
+    en: state.homePage.en,
+    ru: state.homePage.ru,
+  };
 };
 
 export default connect(mapStateToProps, { setDataNotes })(TableNotesContainer);

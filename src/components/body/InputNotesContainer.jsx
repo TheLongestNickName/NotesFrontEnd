@@ -40,12 +40,20 @@ class InputNotesContainer extends React.PureComponent {
   render() {
     return (
       <div className={s.wrap}>
-        <p>Take your notes </p>
+        <p>
+          {this.props.isFetching == "en"
+            ? this.props.en.inputName.title
+            : this.props.ru.inputName.title}
+        </p>
         <input
           className={s.inp}
           value={this.props.inputValue}
           onChange={this.changeInput}
-          placeholder=" Take your notes"
+          placeholder={
+            this.props.isFetching == "en"
+              ? this.props.en.inputName.placeHolder
+              : this.props.ru.inputName.placeHolder
+          }
           ref={this.ListenInpValue}
           onKeyPress={this.onKeyPress}
           type="text"
@@ -57,7 +65,9 @@ class InputNotesContainer extends React.PureComponent {
             this.props.setInputValue("");
           }}
         >
-          Add
+          {this.props.isFetching == "en"
+            ? this.props.en.inputName.btn
+            : this.props.ru.inputName.btn}
         </button>
       </div>
     );
@@ -66,6 +76,9 @@ class InputNotesContainer extends React.PureComponent {
 let mapStateToProps = (state) => {
   return {
     inputValue: state.homePage.inputValue,
+    isFetching: state.homePage.isFetching,
+    en: state.homePage.en,
+    ru: state.homePage.ru,
   };
 };
 

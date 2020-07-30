@@ -7,6 +7,28 @@ const initialState = {
   notes: [],
   oneNotes: "",
   isFetching: "en",
+  en: {
+    inputName: {
+      title: "Take your notes",
+      placeHolder: "Take your notes",
+      btn: "Add",
+    },
+    tableName: {
+      notes: "Your notes",
+      actions: "Action",
+    },
+  },
+  ru: {
+    inputName: {
+      title: "Делайте ваши заметки",
+      placeHolder: "Делайте ваши заметки",
+      btn: "Добавить",
+    },
+    tableName: {
+      notes: "Ваши заметки",
+      actions: "Действие",
+    },
+  },
 };
 
 const homePageReducer = (state = initialState, action) => {
@@ -29,7 +51,7 @@ const homePageReducer = (state = initialState, action) => {
     case TOGGEL_IS_FETCHING:
       return {
         ...state,
-        TOGGEL_IS_FETCHING: action.isFetching,
+        isFetching: action.isFetching,
       };
 
     default:

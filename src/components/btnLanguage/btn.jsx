@@ -1,10 +1,22 @@
 import React from "react";
 
-let BtnLanguege = () => {
+let BtnLanguege = (props) => {
   return (
     <p>
-      <button>English</button>
-      <button>Russian</button>
+      <button
+        onClick={() => {
+          props.toggleIsFetching("en");
+        }}
+      >
+        English
+      </button>
+      <button
+        onClick={() => {
+          props.toggleIsFetching("ru");
+        }}
+      >
+        Russian
+      </button>
     </p>
   );
 };
