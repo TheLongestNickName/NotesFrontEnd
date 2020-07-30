@@ -34,6 +34,11 @@ class EditNotesContainer extends React.Component {
         setName={this.props.setDataName}
         addNotesData={this.addNotesData}
         id={this.props.match.params.id}
+        language={
+          this.props.isFetching == "en"
+            ? this.props.en.tableValue
+            : this.props.ru.tableValue
+        }
       />
     );
     /* return <Profile {...this.state} profile={this.props.profile} />; */
@@ -43,6 +48,9 @@ class EditNotesContainer extends React.Component {
 let mapStateToProps = (state) => {
   return {
     oneNotes: state.homePage.oneNotes,
+    isFetching: state.homePage.isFetching,
+    en: state.homePage.en,
+    ru: state.homePage.ru,
   };
 };
 

@@ -21,6 +21,8 @@ const initialState = {
       action: {
         edit: "Edit",
         delete: "Delete",
+        save: "save",
+        cancel: "cancel",
       },
     },
   },
@@ -38,6 +40,8 @@ const initialState = {
       action: {
         edit: "Изменить",
         delete: "Удалить",
+        save: "Сохранить",
+        cancel: "Отмена",
       },
     },
   },

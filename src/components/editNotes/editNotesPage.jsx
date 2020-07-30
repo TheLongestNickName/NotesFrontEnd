@@ -29,14 +29,14 @@ let EditNote = (props) => {
           props.addNotesData(props.id, props.oneNotes, SaveAndHome);
         }}
       >
-        Save
+        {props.language.action.save}
       </button>
       <button
         onClick={() => {
           backHome();
         }}
       >
-        Cancel
+        {props.language.action.cancel}
       </button>
     </div>
   );
