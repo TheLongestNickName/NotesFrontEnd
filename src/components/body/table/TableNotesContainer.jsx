@@ -46,6 +46,12 @@ class TableNotesContainer extends React.Component {
                 key={n.id}
                 id={n.id}
                 name={n.name}
+                language={
+                  this.props.isFetching == "en"
+                    ? this.props.en.tableValue.action
+                    : this.props.ru.tableValue.action
+                }
+                isFetching={this.props.isFetching}
               />
             );
           })}

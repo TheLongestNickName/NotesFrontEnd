@@ -17,6 +17,12 @@ const initialState = {
       notes: "Your notes",
       actions: "Action",
     },
+    tableValue: {
+      action: {
+        edit: "Edit",
+        delete: "Delete",
+      },
+    },
   },
   ru: {
     inputName: {
@@ -27,6 +33,12 @@ const initialState = {
     tableName: {
       notes: "Ваши заметки",
       actions: "Действие",
+    },
+    tableValue: {
+      action: {
+        edit: "Изменить",
+        delete: "Удалить",
+      },
     },
   },
 };
