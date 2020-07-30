@@ -26,18 +26,20 @@ class TableNotesContainer extends React.Component {
     return (
       <div className={s.wrap}>
         <table>
-          <tr>
-            <th>
-              {this.props.isFetching == "en"
-                ? this.props.en.tableName.notes
-                : this.props.ru.tableName.notes}
-            </th>
-            <th>
-              {this.props.isFetching == "en"
-                ? this.props.en.tableName.actions
-                : this.props.ru.tableName.actions}
-            </th>
-          </tr>
+          <thead>
+            <tr>
+              <th>
+                {this.props.isFetching === "en"
+                  ? this.props.en.tableName.notes
+                  : this.props.ru.tableName.notes}
+              </th>
+              <th>
+                {this.props.isFetching === "en"
+                  ? this.props.en.tableName.actions
+                  : this.props.ru.tableName.actions}
+              </th>
+            </tr>
+          </thead>
           {this.props.notes.map((n) => {
             return (
               <ValueTableNotes
@@ -47,7 +49,7 @@ class TableNotesContainer extends React.Component {
                 id={n.id}
                 name={n.name}
                 language={
-                  this.props.isFetching == "en"
+                  this.props.isFetching === "en"
                     ? this.props.en.tableValue.action
                     : this.props.ru.tableValue.action
                 }

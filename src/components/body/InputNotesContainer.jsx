@@ -41,7 +41,7 @@ class InputNotesContainer extends React.PureComponent {
     return (
       <div className={s.wrap}>
         <p>
-          {this.props.isFetching == "en"
+          {this.props.isFetching === "en"
             ? this.props.en.inputName.title
             : this.props.ru.inputName.title}
         </p>
@@ -50,7 +50,7 @@ class InputNotesContainer extends React.PureComponent {
           value={this.props.inputValue}
           onChange={this.changeInput}
           placeholder={
-            this.props.isFetching == "en"
+            this.props.isFetching === "en"
               ? this.props.en.inputName.placeHolder
               : this.props.ru.inputName.placeHolder
           }
@@ -65,7 +65,7 @@ class InputNotesContainer extends React.PureComponent {
             this.props.setInputValue("");
           }}
         >
-          {this.props.isFetching == "en"
+          {this.props.isFetching === "en"
             ? this.props.en.inputName.btn
             : this.props.ru.inputName.btn}
         </button>

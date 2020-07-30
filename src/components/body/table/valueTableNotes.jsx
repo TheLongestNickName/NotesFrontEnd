@@ -9,25 +9,27 @@ let ValueTableNotes = (props) => {
   };
 
   return (
-    <tr>
-      <td>{props.name}</td>
-      <td className={props.isFetching == "ru" ? s.td2 : ""}>
-        <button
-          onClick={() => {
-            moveToEdit(props.id);
-          }}
-        >
-          {props.language.edit}
-        </button>
-        <button
-          onClick={() => {
-            props.deleteNotes(props.id);
-          }}
-        >
-          {props.language.delete}
-        </button>
-      </td>
-    </tr>
+    <tbody>
+      <tr>
+        <td>{props.name}</td>
+        <td className={props.isFetching === "ru" ? s.td2 : ""}>
+          <button
+            onClick={() => {
+              moveToEdit(props.id);
+            }}
+          >
+            {props.language.edit}
+          </button>
+          <button
+            onClick={() => {
+              props.deleteNotes(props.id);
+            }}
+          >
+            {props.language.delete}
+          </button>
+        </td>
+      </tr>
+    </tbody>
   );
 };
 

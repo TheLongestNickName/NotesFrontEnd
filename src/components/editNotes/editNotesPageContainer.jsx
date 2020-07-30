@@ -35,7 +35,7 @@ class EditNotesContainer extends React.Component {
         addNotesData={this.addNotesData}
         id={this.props.match.params.id}
         language={
-          this.props.isFetching == "en"
+          this.props.isFetching === "en"
             ? this.props.en.tableValue
             : this.props.ru.tableValue
         }
